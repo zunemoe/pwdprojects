@@ -22,49 +22,54 @@
             border-radius: 30px;
             background-color: red;
         }
+
+        #result {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        label {
+        display: none;
+        color: red;
+    }
     </style>
+
 </head>
 <body>
-    <div id="box">
-        <div id="ball"></div>
-    </div>  
+    <h1>Add Form</h1>
+    <div class="form">
+        <div>
+            <input type="text" id="a">
+            <label for="a">Please enter a number</label>
+        </div>
+        <div>
+            <input type="text" id="b">
+            <label for="b">Please enter a number</label>
+        </div>
+        <div id="result"></div>
+        <button id="add">Add</button>
+    </div>
 
-    <button onClick = "start()">Start</button>
-    <button onClick = "stop()">Stop</button>
-    <button onClick = "reset()">Reset</button>
+    <script>        
+        document.querySelector("#add").onclick = function() {
+            let a = parseInt(document.querySelector("a").value)
+            let b = parseInt(document.querySelector("b").value)
 
-    <script>
-        let ball = document.querySelector('#ball');
-        let left = 0;
-        let direction = "right";
-
-        let interval = setInterval(move, 10);
-
-        function move() {
-            if (direction === "right") {
-                left += 1;
-                if (left > 790) direction = "left";
-            } else {
-                left -= 1;
-                if (left < 1) direction = "right";
+            if ( isNaN(a) ) {
+                document.querySelector("[for=a]").style.display = "inline"
             }
 
-            ball.style.left = `${left}px`;
-        }
+            if ( isNaN(b) ) {
+                document.querySelector("[for=b]").style.display = "inline"
+            }
 
-        function start() {
-            interval = setInterval(move, 10);
-        }
 
-        function stop() {
-            clearInterval(interval);
-        }
 
-        function reset() {
-            left = 0;
-            ball.style.left = `${left}px`;
+            let result = parseInt(a) + parseInt(b)
+
+
+            
         }
-        
     </script>
 </body>
 </html>
