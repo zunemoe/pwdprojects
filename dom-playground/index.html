@@ -52,8 +52,8 @@
 
     <script>        
         document.querySelector("#add").onclick = function() {
-            let a = parseInt(document.querySelector("a").value)
-            let b = parseInt(document.querySelector("b").value)
+            let a = parseInt(document.querySelector("#a").value)
+            let b = parseInt(document.querySelector("#b").value)
 
             if ( isNaN(a) ) {
                 document.querySelector("[for=a]").style.display = "inline"
@@ -63,12 +63,27 @@
                 document.querySelector("[for=b]").style.display = "inline"
             }
 
+            let result = a + b
 
+            if ( !isNaN(result) ) {
+                document.querySelector("#result").textContent = result
+            }            
+        }
 
-            let result = parseInt(a) + parseInt(b)
+        document.querySelector("#a").onkeyup = function() {
+            let a = parseInt(document.querySelector("#a").value)
 
+            if ( !isNaN(a) ) {
+                document.querySelector("[for=a]").style.display = "none"
+            }
+        }
 
-            
+        document.querySelector("#b").onkeyup = function() {
+            let b = parseInt(document.querySelector("#b").value)
+
+            if ( !isNaN(b) ) {
+                document.querySelector("[for=b]").style.display = "none"
+            }
         }
     </script>
 </body>

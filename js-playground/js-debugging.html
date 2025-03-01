@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Debugging</title>
+</head>
+<body>
+    <input type="text">
+    <label></label>
+
+    <script>
+        console.warn("JS working");
+        document.querySelector("input").onkeyup = function() {
+            console.warn("Keyup working");
+
+            let count = document.querySelector("input").value.length;
+            if (count) {
+                console.warn("Count working");
+                document.querySelector("label").testContent = count;
+            }
+        }
+    </script>
+</body>
+</html>

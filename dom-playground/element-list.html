@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element List</title>
+</head>
+<body>
+    <ul id="spices">
+        <li>Cinnamon</li>
+        <li>Clove</li>
+        <li>Coriander</li>
+        <li>Cumin</li>
+        <li>Garlic</li>
+        <li>Ginger</li>
+        <li>Mustard</li>
+        <li>Onion</li>
+        <li>Paprika</li>
+        <li>Pepper</li>
+        <li>Turmeric</li>
+    </ul>
+
+    <ul id = "fruits">
+        <li>Blueberry</li>
+    </ul>
+
+    <script>
+        let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape", "Honeydew", "Jackfruit", "Kiwi", "Lemon", "Mango", "Nectarine", "Orange", "Papaya", "Quince", "Raspberry", "Strawberry", "Tangerine", "Ugli fruit", "Vanilla bean", "Watermelon", "Ximenia caffra", "Yuzu", "Zucchini"];
+        let ul = document.querySelector("#spices");
+
+        fruits.map(fruit => {
+            let li = document.createElement("li");
+            li.textContent = fruit;
+
+            ul.insertBefore(li, ul.children[2]);
+            ul.appendChild(li);
+        })
+    </script>
+</body>
+</html>
